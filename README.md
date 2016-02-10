@@ -13,10 +13,12 @@ Contents (most parts optional, see schematic for details):
 
 * MAX6070 voltage reference (x2)
 
-* AD8277 and AD8607 configured as two current sources
+* AD8277 dual difference amp and AD8607 dual op amp configured as two current sources (limited to relatively low output currents, intended for use as bias supplies for resistive sensors)
 
-* MAX 14661 multiplexer (x2): one mapping 2 power sources to 16 sensor channels and the other mapping the same sensor channels to 2 sampling channels.  These are on separate pins to support 3-terminal measurements, and with a bit of finagling channels can be ganged together to support 4-terminal measurements.
+* MAX 14661 multiplexer (x2): the first connects 2 power sources to 16 sensor channels and the other connects the same sensor channels to 2 sampling channels.  These are on separate pins to support 3-terminal measurements, and with a bit of finagling channels can be ganged together to support 4-terminal measurements.
 
 * MAX4209 instrument amp (x2) to provide high impedance at the sensor measurement terminals.
 
 * MCP3911 24-bit ADC with analog front-end.  This is a very inexpensive part so I'm a bit concerned it may not perform as advertised, but I thought I'd give it a try.  On paper it's a very interesting design, achieving very impressive specs for its price point through DSP techniques.
+
+All parts except the current source have reasonably low active mode power consumption and very low power shutdown modes.  Current source should still be under 1 mA, but I intend to add a way to switch it off as well.
