@@ -3,19 +3,17 @@ TODO
 
 Stuff to add:
 
-* Load switch for current sources
+* Load switch for current sources, maybe
 
 Stuff to check:
 
 * check whether there are other lines that need (or might want) pull resistors
 
-* make sure all ICs' pull resistors default to OFF
+* review all footprints
 
-* active-mode current consumption of all ICs
+* review all signals, make sure they are being driven properly, DNP annotations make sense, etc
 
-* shutdown-mode current consumption of all ICs
-
-* current consumption and noise susceptibility of all dividers and pull-up/down resistors (especially pull resistors used or overridden to enter shutdown modes)
+* check all resistor values for noise susceptibility (especially dividers and pull resistors used or overridden to enter shutdown modes)
 
 * error propagation of voltage and current references
 

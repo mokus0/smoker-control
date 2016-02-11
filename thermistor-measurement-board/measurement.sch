@@ -65,9 +65,9 @@ Text HLabel 1200 2900 0    60   Input ~ 0
 DVDD
 Text HLabel 1200 3000 0    60   Input ~ 0
 AVCC
-Text HLabel 1200 4300 0    60   Input ~ 0
+Text HLabel 1200 4600 0    60   Input ~ 0
 OUT_B+
-Text HLabel 1200 4400 0    60   Input ~ 0
+Text HLabel 1200 4700 0    60   Input ~ 0
 OUT_B-
 Text HLabel 1200 3500 0    60   Input ~ 0
 GNDA
@@ -103,9 +103,9 @@ F 3 "" H 1800 3500 50  0000 C CNN
 	1    1800 3500
 	0    -1   -1   0   
 $EndComp
-Text Label 1800 4300 2    60   ~ 0
+Text Label 1800 4600 2    60   ~ 0
 OUT_B+
-Text Label 1800 4400 2    60   ~ 0
+Text Label 1800 4700 2    60   ~ 0
 OUT_B-
 Text Label 2600 4300 0    60   ~ 0
 ADC_CS
@@ -120,12 +120,12 @@ ADC_RST
 $Comp
 L CP1_Small C317
 U 1 1 56B5E66E
-P 5200 5500
-F 0 "C317" H 5210 5570 50  0000 L CNN
-F 1 "0.1u" H 5210 5420 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0402" H 5200 5500 50  0001 C CNN
-F 3 "" H 5200 5500 50  0000 C CNN
-	1    5200 5500
+P 5500 5650
+F 0 "C317" H 5510 5720 50  0000 L CNN
+F 1 "0.1u" H 5510 5570 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 5500 5650 50  0001 C CNN
+F 3 "" H 5500 5650 50  0000 C CNN
+	1    5500 5650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -241,29 +241,29 @@ F 3 "" H 4300 6400 50  0000 C CNN
 $EndComp
 Text Label 5200 6400 2    60   ~ 0
 ADC_MCLK
-Text Label 1800 4800 2    60   ~ 0
-ADC_CS
-Text Label 1800 5000 2    60   ~ 0
-SCLK
-Text Label 1800 5200 2    60   ~ 0
-MISO
 Text Label 1800 5100 2    60   ~ 0
-MOSI
-Text Label 1800 5600 2    60   ~ 0
-ADC_DR_INT
-Text Label 1800 5700 2    60   ~ 0
-ADC_RST
-Text HLabel 1200 4800 0    60   Input ~ 0
 ADC_CS
-Text HLabel 1200 5000 0    60   Input ~ 0
+Text Label 1800 5300 2    60   ~ 0
 SCLK
-Text HLabel 1200 5100 0    60   Input ~ 0
-MOSI
-Text HLabel 1200 5200 0    60   Input ~ 0
+Text Label 1800 5500 2    60   ~ 0
 MISO
-Text HLabel 1200 5600 0    60   Input ~ 0
+Text Label 1800 5400 2    60   ~ 0
+MOSI
+Text Label 1800 5900 2    60   ~ 0
 ADC_DR_INT
-Text HLabel 1200 5700 0    60   Input ~ 0
+Text Label 1800 6000 2    60   ~ 0
+ADC_RST
+Text HLabel 1200 5100 0    60   Input ~ 0
+ADC_CS
+Text HLabel 1200 5300 0    60   Input ~ 0
+SCLK
+Text HLabel 1200 5400 0    60   Input ~ 0
+MOSI
+Text HLabel 1200 5500 0    60   Input ~ 0
+MISO
+Text HLabel 1200 5900 0    60   Input ~ 0
+ADC_DR_INT
+Text HLabel 1200 6000 0    60   Input ~ 0
 ADC_RST
 $Comp
 L C_Small C319
@@ -471,7 +471,7 @@ L R R311
 U 1 1 56B7DB0A
 P 4500 1950
 F 0 "R311" V 4580 1950 50  0000 C CNN
-F 1 "100k" V 4500 1950 50  0000 C CNN
+F 1 "1M" V 4500 1950 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" V 4430 1950 50  0001 C CNN
 F 3 "" H 4500 1950 50  0000 C CNN
 	1    4500 1950
@@ -482,7 +482,7 @@ L R R301
 U 1 1 56B7DB6E
 P 4500 950
 F 0 "R301" V 4580 950 50  0000 C CNN
-F 1 "660k" V 4500 950 50  0000 C CNN
+F 1 "6.6M" V 4500 950 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" V 4430 950 50  0001 C CNN
 F 3 "" H 4500 950 50  0000 C CNN
 	1    4500 950 
@@ -518,6 +518,7 @@ F 0 "C307" H 4810 2020 50  0000 L CNN
 F 1 "0.01u" H 4810 1870 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 4800 1950 50  0001 C CNN
 F 3 "" H 4800 1950 50  0000 C CNN
+F 4 "isolation ≫ 1 Mohm" H 5200 1800 60  0000 C CNN "Note"
 	1    4800 1950
 	1    0    0    -1  
 $EndComp
@@ -568,7 +569,7 @@ L R R312
 U 1 1 56B81261
 P 9700 1950
 F 0 "R312" V 9780 1950 50  0000 C CNN
-F 1 "100k" V 9700 1950 50  0000 C CNN
+F 1 "1M" V 9700 1950 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" V 9630 1950 50  0001 C CNN
 F 3 "" H 9700 1950 50  0000 C CNN
 	1    9700 1950
@@ -631,6 +632,7 @@ F 0 "C308" H 10010 2020 50  0000 L CNN
 F 1 "0.01u" H 10010 1870 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 10000 1950 50  0001 C CNN
 F 3 "" H 10000 1950 50  0000 C CNN
+F 4 "isolation ≫ 1 Mohm" H 10400 1800 60  0000 C CNN "Note"
 	1    10000 1950
 	1    0    0    -1  
 $EndComp
@@ -662,7 +664,7 @@ L R R302
 U 1 1 56B83E93
 P 9700 950
 F 0 "R302" V 9780 950 50  0000 C CNN
-F 1 "660k" V 9700 950 50  0000 C CNN
+F 1 "6.6M" V 9700 950 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" V 9630 950 50  0001 C CNN
 F 3 "" H 9700 950 50  0000 C CNN
 	1    9700 950 
@@ -793,36 +795,36 @@ F 3 "" H 2250 5150 50  0000 C CNN
 	1    2250 5150
 	-1   0    0    1   
 $EndComp
-Text Label 5450 4600 2    60   ~ 0
+Text Label 5450 4500 2    60   ~ 0
 OUT_B+
-Text Label 5450 4700 2    60   ~ 0
+Text Label 5450 4600 2    60   ~ 0
 OUT_B-
 $Comp
 L GNDA #PWR030
 U 1 1 56B88589
-P 5100 5850
-F 0 "#PWR030" H 5100 5600 50  0001 C CNN
-F 1 "GNDA" H 5100 5700 50  0000 C CNN
-F 2 "" H 5100 5850 50  0000 C CNN
-F 3 "" H 5100 5850 50  0000 C CNN
-	1    5100 5850
+P 5100 6000
+F 0 "#PWR030" H 5100 5750 50  0001 C CNN
+F 1 "GNDA" H 5100 5850 50  0000 C CNN
+F 2 "" H 5100 6000 50  0000 C CNN
+F 3 "" H 5100 6000 50  0000 C CNN
+	1    5100 6000
 	1    0    0    -1  
 $EndComp
-Text Label 1800 4700 2    60   ~ 0
+Text Label 1800 5000 2    60   ~ 0
 AMP_MUX_CS
-Text HLabel 1200 4700 0    60   Input ~ 0
+Text HLabel 1200 5000 0    60   Input ~ 0
 AMP_MUX_CS
-Text Label 1800 5400 2    60   ~ 0
+Text Label 1800 5700 2    60   ~ 0
 AMP_MUX_EN
-Text HLabel 1200 5400 0    60   Input ~ 0
+Text HLabel 1200 5700 0    60   Input ~ 0
 AMP_MUX_EN
-Text HLabel 1200 4000 0    60   Input ~ 0
+Text HLabel 1200 4300 0    60   Input ~ 0
 OUT_A+
-Text HLabel 1200 4100 0    60   Input ~ 0
+Text HLabel 1200 4400 0    60   Input ~ 0
 OUT_A-
-Text Label 1800 4000 2    60   ~ 0
+Text Label 1800 4300 2    60   ~ 0
 OUT_A+
-Text Label 1800 4100 2    60   ~ 0
+Text Label 1800 4400 2    60   ~ 0
 OUT_A-
 $Comp
 L R R315
@@ -875,14 +877,84 @@ F 3 "" H 6900 5800 50  0000 C CNN
 $EndComp
 Text Label 6600 4200 3    60   ~ 0
 DVDD
-Text Label 1800 4900 2    60   ~ 0
+Text Label 1800 5200 2    60   ~ 0
 ADC_MCLK
-Text HLabel 1200 4900 0    60   Input ~ 0
+Text HLabel 1200 5200 0    60   Input ~ 0
 ADC_MCLK
 Text Label 2400 600  0    60   ~ 0
 AVCC
 Text Label 7800 600  0    60   ~ 0
 AVCC
+$Comp
+L CRYSTAL_SMD X1
+U 1 1 56B83F0F
+P 4300 6700
+F 0 "X1" H 4300 6790 50  0000 C CNN
+F 1 "≤ 20Mz" H 4330 6590 50  0000 L CNN
+F 2 "Crystals:crystal_FA238-TSX3225" H 4300 6700 50  0001 C CNN
+F 3 "" H 4300 6700 50  0000 C CNN
+F 4 "DNP" H 4200 6550 60  0000 C CNN "Note"
+	1    4300 6700
+	1    0    0    -1  
+$EndComp
+Text Label 1800 3700 2    60   ~ 0
+REF_A
+Text Label 1800 3800 2    60   ~ 0
+REF_B
+Text HLabel 1200 3700 0    60   Input ~ 0
+REF_A
+Text HLabel 1200 3800 0    60   Input ~ 0
+REF_B
+$Comp
+L GND #PWR032
+U 1 1 56B75D81
+P 7600 3600
+F 0 "#PWR032" H 7600 3350 50  0001 C CNN
+F 1 "GND" H 7600 3450 50  0000 C CNN
+F 2 "" H 7600 3600 50  0000 C CNN
+F 3 "" H 7600 3600 50  0000 C CNN
+	1    7600 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R R323
+U 1 1 56B9BDF9
+P 2500 6550
+F 0 "R323" V 2580 6550 50  0000 C CNN
+F 1 "100k" V 2500 6550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 2430 6550 50  0001 C CNN
+F 3 "" H 2500 6550 50  0000 C CNN
+	1    2500 6550
+	-1   0    0    1   
+$EndComp
+Text Label 2500 7300 1    60   ~ 0
+ADC_RST
+$Comp
+L C_Small C321
+U 1 1 56B9D040
+P 9100 1800
+F 0 "C321" H 9110 1870 50  0000 L CNN
+F 1 "1000p" H 9110 1720 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 9100 1800 50  0001 C CNN
+F 3 "" H 9100 1800 50  0000 C CNN
+F 4 "DNP" H 9200 1650 60  0000 C CNN "Note"
+	1    9100 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C320
+U 1 1 56B9D75B
+P 4200 1700
+F 0 "C320" H 4210 1770 50  0000 L CNN
+F 1 "1000p" H 4210 1620 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 4200 1700 50  0001 C CNN
+F 3 "" H 4200 1700 50  0000 C CNN
+F 4 "DNP" H 4300 1550 60  0000 C CNN "Note"
+	1    4200 1700
+	1    0    0    -1  
+$EndComp
+Text Notes 5000 2900 0    60   ~ 0
+Setting REFIN to about 0.4V by default. This puts it\nhigh enough to ensure REF is driven, but not too high\nfor the ADC's input range.\noptionally, only stuff pull-up side of these dividers\nand use an ADC to set REFIN when enabling
 Wire Wire Line
 	8650 6000 8650 5900
 Wire Wire Line
@@ -901,9 +973,9 @@ Wire Wire Line
 Wire Wire Line
 	1200 3000 1800 3000
 Wire Wire Line
-	1200 4400 1800 4400
+	1200 4700 1800 4700
 Wire Wire Line
-	1800 4300 1200 4300
+	1800 4600 1200 4600
 Wire Wire Line
 	2600 4300 3200 4300
 Wire Wire Line
@@ -950,17 +1022,17 @@ Wire Wire Line
 	4200 5900 4200 5800
 Connection ~ 4100 5900
 Wire Wire Line
-	1800 4800 1200 4800
-Wire Wire Line
-	1800 5000 1200 5000
-Wire Wire Line
 	1800 5100 1200 5100
 Wire Wire Line
-	1800 5200 1200 5200
+	1800 5300 1200 5300
 Wire Wire Line
-	1200 5600 1800 5600
+	1800 5400 1200 5400
 Wire Wire Line
-	1800 5700 1200 5700
+	1800 5500 1200 5500
+Wire Wire Line
+	1200 5900 1800 5900
+Wire Wire Line
+	1800 6000 1200 6000
 Wire Wire Line
 	3900 6400 4150 6400
 Wire Wire Line
@@ -1221,22 +1293,20 @@ Wire Wire Line
 	2350 5500 2350 5400
 Connection ~ 2350 5400
 Wire Wire Line
-	5000 4600 5450 4600
+	5000 4500 5450 4500
 Wire Wire Line
-	5450 4700 5000 4700
+	5450 4600 5000 4600
 Wire Wire Line
-	5000 5400 5100 5400
+	5000 5400 6200 5400
 Wire Wire Line
-	5100 5400 5100 5850
+	5000 5300 6100 5300
 Wire Wire Line
-	5000 5300 5200 5300
+	5500 5100 5500 5550
 Wire Wire Line
-	5200 5300 5200 5400
+	5500 5750 5500 5900
 Wire Wire Line
-	5200 5600 5200 5750
-Wire Wire Line
-	5200 5750 5100 5750
-Connection ~ 5100 5750
+	5500 5900 5100 5900
+Connection ~ 5100 5900
 Wire Wire Line
 	8750 3100 8750 3600
 Connection ~ 9000 3100
@@ -1248,13 +1318,13 @@ Wire Wire Line
 Wire Wire Line
 	7800 4000 7900 4000
 Wire Wire Line
-	1800 4700 1200 4700
+	1800 5000 1200 5000
 Wire Wire Line
-	1800 5400 1200 5400
+	1800 5700 1200 5700
 Wire Wire Line
-	1200 4100 1800 4100
+	1200 4400 1800 4400
 Wire Wire Line
-	1800 4000 1200 4000
+	1800 4300 1200 4300
 Connection ~ 3500 3100
 Connection ~ 4900 3100
 Wire Wire Line
@@ -1284,7 +1354,7 @@ Wire Wire Line
 Wire Wire Line
 	4450 6400 5200 6400
 Wire Wire Line
-	1800 4900 1200 4900
+	1800 5200 1200 5200
 Connection ~ 2700 600 
 Connection ~ 8100 600 
 Wire Wire Line
@@ -1351,18 +1421,6 @@ Wire Wire Line
 	9700 6300 9700 4000
 Wire Wire Line
 	9700 4000 9600 4000
-$Comp
-L CRYSTAL_SMD X1
-U 1 1 56B83F0F
-P 4300 6700
-F 0 "X1" H 4300 6790 50  0000 C CNN
-F 1 "≤ 20Mz" H 4330 6590 50  0000 L CNN
-F 2 "Crystals:crystal_FA238-TSX3225" H 4300 6700 50  0001 C CNN
-F 3 "" H 4300 6700 50  0000 C CNN
-F 4 "DNP" H 4200 6550 60  0000 C CNN "Note"
-	1    4300 6700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3900 7000 3900 7100
 Wire Wire Line
@@ -1372,77 +1430,21 @@ Wire Wire Line
 Wire Wire Line
 	4300 6800 4300 7200
 Connection ~ 4300 7100
-Text Label 1800 3700 2    60   ~ 0
-REF_A
-Text Label 1800 3800 2    60   ~ 0
-REF_B
-Text HLabel 1200 3700 0    60   Input ~ 0
-REF_A
-Text HLabel 1200 3800 0    60   Input ~ 0
-REF_B
 Wire Wire Line
 	1200 3800 1800 3800
 Wire Wire Line
 	1200 3700 1800 3700
-$Comp
-L GND #PWR032
-U 1 1 56B75D81
-P 7600 3600
-F 0 "#PWR032" H 7600 3350 50  0001 C CNN
-F 1 "GND" H 7600 3450 50  0000 C CNN
-F 2 "" H 7600 3600 50  0000 C CNN
-F 3 "" H 7600 3600 50  0000 C CNN
-	1    7600 3600
-	-1   0    0    -1  
-$EndComp
-$Comp
-L R R323
-U 1 1 56B9BDF9
-P 2500 6550
-F 0 "R323" V 2580 6550 50  0000 C CNN
-F 1 "100k" V 2500 6550 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 2430 6550 50  0001 C CNN
-F 3 "" H 2500 6550 50  0000 C CNN
-	1    2500 6550
-	-1   0    0    1   
-$EndComp
-Text Label 2500 7300 1    60   ~ 0
-ADC_RST
 Wire Wire Line
 	2500 7300 2500 6700
 Wire Wire Line
 	2500 6400 2500 6300
 Connection ~ 2800 6300
-$Comp
-L C_Small C321
-U 1 1 56B9D040
-P 9100 1800
-F 0 "C321" H 9110 1870 50  0000 L CNN
-F 1 "1000p" H 9110 1720 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0402" H 9100 1800 50  0001 C CNN
-F 3 "" H 9100 1800 50  0000 C CNN
-F 4 "DNP" H 9200 1650 60  0000 C CNN "Note"
-	1    9100 1800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9100 1700 9100 1500
 Connection ~ 9100 1500
 Wire Wire Line
 	9100 1900 9100 2200
 Connection ~ 9100 2200
-$Comp
-L C_Small C320
-U 1 1 56B9D75B
-P 4200 1700
-F 0 "C320" H 4210 1770 50  0000 L CNN
-F 1 "1000p" H 4210 1620 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0402" H 4200 1700 50  0001 C CNN
-F 3 "" H 4200 1700 50  0000 C CNN
-F 4 "DNP" H 4300 1550 60  0000 C CNN "Note"
-	1    4200 1700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4200 1800 4200 1900
 Wire Wire Line
@@ -1466,8 +1468,55 @@ Wire Wire Line
 Wire Wire Line
 	3500 2000 3500 1500
 Connection ~ 3500 1500
-Text Notes 6950 2700 0    60   ~ 0
-Setting REFIN to about 0.4V by default. This puts it\nhigh enough to ensure REF is driven, but not too high\nfor the ADC's input range.\n
 Wire Notes Line
-	9150 2350 9600 1400
+	4950 2400 4550 1400
+Connection ~ 5500 5300
+Text Label 6100 5300 2    60   ~ 0
+ADC_REF+
+Text Label 6200 5400 2    60   ~ 0
+ADC_REF-
+$Comp
+L R R324
+U 1 1 56BCA124
+P 5100 5650
+F 0 "R324" V 5180 5650 50  0000 C CNN
+F 1 "0" V 5100 5650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 5030 5650 50  0001 C CNN
+F 3 "" H 5100 5650 50  0000 C CNN
+	1    5100 5650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5100 5100 5100 5500
+Wire Wire Line
+	5100 5800 5100 6000
+Connection ~ 5100 5400
+Text HLabel 1200 4000 0    60   Input ~ 0
+ADC_REF+
+Text HLabel 1200 4100 0    60   Input ~ 0
+ADC_REF-
+Text Label 1800 4000 2    60   ~ 0
+ADC_REF+
+Text Label 1800 4100 2    60   ~ 0
+ADC_REF-
+Wire Wire Line
+	1200 4100 1800 4100
+Wire Wire Line
+	1800 4000 1200 4000
+$Comp
+L CP1_Small C322
+U 1 1 56BD043D
+P 5300 5100
+F 0 "C322" V 5200 5050 50  0000 L CNN
+F 1 "0.1u" V 5400 5000 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 5300 5100 50  0001 C CNN
+F 3 "" H 5300 5100 50  0000 C CNN
+F 4 "DNP" V 5150 5100 60  0000 C CNN "Note"
+	1    5300 5100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5400 5100 5500 5100
+Wire Wire Line
+	5200 5100 5100 5100
 $EndSCHEMATC

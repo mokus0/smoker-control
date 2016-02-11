@@ -48,18 +48,18 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 1100 4300 0    60   Output ~ 0
+Text HLabel 1100 4600 0    60   Output ~ 0
 MUX_CS
-Text HLabel 1100 4200 0    60   Output ~ 0
+Text HLabel 1100 4500 0    60   Output ~ 0
 MUX_EN
 Text HLabel 1100 1100 0    60   Output ~ 0
 BIAS1
 Text HLabel 1100 1200 0    60   Output ~ 0
 BIAS2
 Wire Wire Line
-	1700 4300 1100 4300
+	1700 4600 1100 4600
 Wire Wire Line
-	1700 4200 1100 4200
+	1700 4500 1100 4500
 Wire Wire Line
 	1700 1100 1100 1100
 Wire Wire Line
@@ -68,9 +68,9 @@ Text Label 1700 1100 2    60   ~ 0
 BIAS1
 Text Label 1700 1200 2    60   ~ 0
 BIAS2
-Text Label 1700 4200 2    60   ~ 0
+Text Label 1700 4500 2    60   ~ 0
 MUX_EN
-Text Label 1700 4300 2    60   ~ 0
+Text Label 1700 4600 2    60   ~ 0
 MUX_CS
 Text HLabel 1100 700  0    60   Output ~ 0
 DVDD
@@ -78,9 +78,9 @@ Text HLabel 1100 800  0    60   Output ~ 0
 AVCC
 Text HLabel 1100 900  0    60   Input ~ 0
 BRDG
-Text HLabel 1100 2900 0    60   Input ~ 0
+Text HLabel 1100 3200 0    60   Input ~ 0
 OUT_A+
-Text HLabel 1100 3000 0    60   Input ~ 0
+Text HLabel 1100 3300 0    60   Input ~ 0
 OUT_A-
 Text HLabel 1100 1600 0    60   Output ~ 0
 GNDA
@@ -128,49 +128,49 @@ F 3 "" H 1700 1600 50  0000 C CNN
 	1    1700 1600
 	0    -1   -1   0   
 $EndComp
-Text Label 1700 2900 2    60   ~ 0
+Text Label 1700 3200 2    60   ~ 0
 OUT_A+
-Text Label 1700 3000 2    60   ~ 0
+Text Label 1700 3300 2    60   ~ 0
 OUT_A-
 Wire Wire Line
-	1100 3000 1700 3000
+	1100 3300 1700 3300
 Wire Wire Line
-	1700 2900 1100 2900
-Text Label 1700 4700 2    60   ~ 0
+	1700 3200 1100 3200
+Text Label 1700 5000 2    60   ~ 0
 ADC_CS
 Wire Wire Line
-	1700 4700 1100 4700
+	1700 5000 1100 5000
 Wire Wire Line
-	1700 3500 1100 3500
+	1700 3800 1100 3800
 Wire Wire Line
-	1700 3600 1100 3600
+	1700 3900 1100 3900
 Wire Wire Line
-	1700 3700 1100 3700
-Text Label 1700 3500 2    60   ~ 0
+	1700 4000 1100 4000
+Text Label 1700 3800 2    60   ~ 0
 SCLK
-Text Label 1700 3700 2    60   ~ 0
+Text Label 1700 4000 2    60   ~ 0
 MISO
-Text Label 1700 3600 2    60   ~ 0
+Text Label 1700 3900 2    60   ~ 0
 MOSI
-Text Label 1700 4500 2    60   ~ 0
+Text Label 1700 4800 2    60   ~ 0
 ADC_DR_INT
 Wire Wire Line
-	1100 4500 1700 4500
-Text Label 1700 4600 2    60   ~ 0
+	1100 4800 1700 4800
+Text Label 1700 4900 2    60   ~ 0
 ADC_RST
 Wire Wire Line
-	1700 4600 1100 4600
-Text HLabel 1100 4700 0    60   Output ~ 0
+	1700 4900 1100 4900
+Text HLabel 1100 5000 0    60   Output ~ 0
 ADC_CS
-Text HLabel 1100 3500 0    60   Output ~ 0
+Text HLabel 1100 3800 0    60   Output ~ 0
 SCLK
-Text HLabel 1100 3600 0    60   Output ~ 0
+Text HLabel 1100 3900 0    60   Output ~ 0
 MOSI
-Text HLabel 1100 3700 0    60   Input ~ 0
+Text HLabel 1100 4000 0    60   Input ~ 0
 MISO
-Text HLabel 1100 4500 0    60   Input ~ 0
+Text HLabel 1100 4800 0    60   Input ~ 0
 ADC_DR_INT
-Text HLabel 1100 4600 0    60   Output ~ 0
+Text HLabel 1100 4900 0    60   Output ~ 0
 ADC_RST
 $Comp
 L PWR_CONN P401
@@ -256,58 +256,58 @@ Wire Wire Line
 Wire Wire Line
 	3500 1500 2900 1500
 Wire Wire Line
-	2650 3800 3250 3800
+	2650 4300 3250 4300
 Wire Wire Line
-	2650 3900 3250 3900
+	2650 4400 3250 4400
 Wire Wire Line
-	2650 4000 3250 4000
-Text Label 2650 3800 0    60   ~ 0
+	2650 4500 3250 4500
+Text Label 2650 4300 0    60   ~ 0
 SCLK
-Text Label 2650 4000 0    60   ~ 0
+Text Label 2650 4500 0    60   ~ 0
 MISO
-Text Label 2650 3900 0    60   ~ 0
+Text Label 2650 4400 0    60   ~ 0
 MOSI
-Text Label 3500 2400 2    60   ~ 0
+Text Label 3500 2900 2    60   ~ 0
 OUT_A+
-Text Label 3500 2600 2    60   ~ 0
+Text Label 3500 3100 2    60   ~ 0
 OUT_A-
 Wire Wire Line
-	2900 2600 3500 2600
+	2900 3100 3500 3100
 Wire Wire Line
-	3500 2400 2900 2400
+	3500 2900 2900 2900
 $Comp
 L GND #PWR038
 U 1 1 56B76BAA
-P 2750 3400
-F 0 "#PWR038" H 2750 3150 50  0001 C CNN
-F 1 "GND" H 2750 3250 50  0000 C CNN
-F 2 "" H 2750 3400 50  0000 C CNN
-F 3 "" H 2750 3400 50  0000 C CNN
-	1    2750 3400
+P 2750 3900
+F 0 "#PWR038" H 2750 3650 50  0001 C CNN
+F 1 "GND" H 2750 3750 50  0000 C CNN
+F 2 "" H 2750 3900 50  0000 C CNN
+F 3 "" H 2750 3900 50  0000 C CNN
+	1    2750 3900
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	3250 3400 2750 3400
+	3250 3900 2750 3900
 Wire Wire Line
-	2650 3700 3250 3700
-Text Label 2650 3700 0    60   ~ 0
+	2650 4200 3250 4200
+Text Label 2650 4200 0    60   ~ 0
 MUX_CS
-Text Label 4350 3500 2    60   ~ 0
+Text Label 4350 4000 2    60   ~ 0
 ADC_CS
 Wire Wire Line
-	4350 3500 3750 3500
+	4350 4000 3750 4000
 Wire Wire Line
-	2650 3600 3250 3600
-Text Label 2650 3600 0    60   ~ 0
+	2650 4100 3250 4100
+Text Label 2650 4100 0    60   ~ 0
 MUX_EN
-Text Label 4350 3600 2    60   ~ 0
+Text Label 4350 4100 2    60   ~ 0
 ADC_DR_INT
 Wire Wire Line
-	3750 3600 4350 3600
-Text Label 4350 3400 2    60   ~ 0
+	3750 4100 4350 4100
+Text Label 4350 3900 2    60   ~ 0
 ADC_RST
 Wire Wire Line
-	4350 3400 3750 3400
+	4350 3900 3750 3900
 Text Label 7000 1100 2    60   ~ 0
 AVCC
 Text Label 4800 1100 0    60   ~ 0
@@ -431,108 +431,108 @@ Connection ~ 5200 1100
 Connection ~ 5200 1500
 Text Notes 5000 1950 0    60   ~ 0
 Star connction for GNDA, near P401
-Text HLabel 1100 3200 0    60   Input ~ 0
+Text HLabel 1100 3500 0    60   Input ~ 0
 OUT_B+
-Text HLabel 1100 3300 0    60   Input ~ 0
+Text HLabel 1100 3600 0    60   Input ~ 0
 OUT_B-
-Text Label 1700 3200 2    60   ~ 0
+Text Label 1700 3500 2    60   ~ 0
 OUT_B+
-Text Label 1700 3300 2    60   ~ 0
-OUT_B-
-Wire Wire Line
-	1100 3300 1700 3300
-Wire Wire Line
-	1700 3200 1100 3200
-Text Label 3500 2900 2    60   ~ 0
-OUT_B+
-Text Label 3500 3100 2    60   ~ 0
+Text Label 1700 3600 2    60   ~ 0
 OUT_B-
 Wire Wire Line
-	2900 3100 3500 3100
+	1100 3600 1700 3600
 Wire Wire Line
-	3500 2900 2900 2900
+	1700 3500 1100 3500
+Text Label 3500 3400 2    60   ~ 0
+OUT_B+
+Text Label 3500 3600 2    60   ~ 0
+OUT_B-
+Wire Wire Line
+	2900 3600 3500 3600
+Wire Wire Line
+	3500 3400 2900 3400
 $Comp
 L CONN_01X03 P403
 U 1 1 56B95AC0
-P 2700 2500
-F 0 "P403" H 2700 2700 50  0000 C CNN
-F 1 "OUT_A" V 2800 2500 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 2700 2500 50  0001 C CNN
-F 3 "" H 2700 2500 50  0000 C CNN
-	1    2700 2500
-	-1   0    0    -1  
-$EndComp
-$Comp
-L CONN_01X03 P404
-U 1 1 56B95B06
 P 2700 3000
-F 0 "P404" H 2700 3200 50  0000 C CNN
-F 1 "OUT_B" V 2800 3000 50  0000 C CNN
+F 0 "P403" H 2700 3200 50  0000 C CNN
+F 1 "OUT_A" V 2800 3000 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 2700 3000 50  0001 C CNN
 F 3 "" H 2700 3000 50  0000 C CNN
 	1    2700 3000
 	-1   0    0    -1  
 $EndComp
+$Comp
+L CONN_01X03 P404
+U 1 1 56B95B06
+P 2700 3500
+F 0 "P404" H 2700 3700 50  0000 C CNN
+F 1 "OUT_B" V 2800 3500 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 2700 3500 50  0001 C CNN
+F 3 "" H 2700 3500 50  0000 C CNN
+	1    2700 3500
+	-1   0    0    -1  
+$EndComp
 Wire Wire Line
-	4350 3700 3750 3700
-Text Label 4350 3700 2    60   ~ 0
+	4350 4200 3750 4200
+Text Label 4350 4200 2    60   ~ 0
 AMP_MUX_CS
 Wire Wire Line
-	4350 3800 3750 3800
-Text Label 4350 3800 2    60   ~ 0
+	4350 4300 3750 4300
+Text Label 4350 4300 2    60   ~ 0
 AMP_MUX_EN
 Wire Wire Line
-	2650 3500 3250 3500
-Text HLabel 1100 4000 0    60   Output ~ 0
+	2650 4000 3250 4000
+Text HLabel 1100 4300 0    60   Output ~ 0
 AMP_MUX_CS
-Text HLabel 1100 3900 0    60   Output ~ 0
+Text HLabel 1100 4200 0    60   Output ~ 0
 AMP_MUX_EN
 Wire Wire Line
-	1700 4000 1100 4000
+	1700 4300 1100 4300
 Wire Wire Line
-	1700 3900 1100 3900
-Text Label 1700 3900 2    60   ~ 0
+	1700 4200 1100 4200
+Text Label 1700 4200 2    60   ~ 0
 AMP_MUX_EN
-Text Label 1700 4000 2    60   ~ 0
+Text Label 1700 4300 2    60   ~ 0
 AMP_MUX_CS
 Wire Notes Line
 	5600 1800 5650 1650
-Text Label 1700 4800 2    60   ~ 0
+Text Label 1700 5100 2    60   ~ 0
 ADC_MCLK
 Wire Wire Line
-	1700 4800 1100 4800
-Text HLabel 1100 4800 0    60   Output ~ 0
+	1700 5100 1100 5100
+Text HLabel 1100 5100 0    60   Output ~ 0
 ADC_MCLK
 $Comp
 L CONN_02X07 P406
 U 1 1 56B9EC32
-P 3500 3700
-F 0 "P406" H 3500 4100 50  0000 C CNN
-F 1 "I/O" V 3500 3700 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x07" H 3500 2500 50  0001 C CNN
-F 3 "" H 3500 2500 50  0000 C CNN
-	1    3500 3700
+P 3500 4200
+F 0 "P406" H 3500 4600 50  0000 C CNN
+F 1 "I/O" V 3500 4200 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x07" H 3500 3000 50  0001 C CNN
+F 3 "" H 3500 3000 50  0000 C CNN
+	1    3500 4200
 	1    0    0    -1  
 $EndComp
-Text Label 2650 3500 0    60   ~ 0
+Text Label 2650 4000 0    60   ~ 0
 ADC_MCLK
 $Comp
 L GND #PWR041
 U 1 1 56B9EE11
-P 4250 4000
-F 0 "#PWR041" H 4250 3750 50  0001 C CNN
-F 1 "GND" H 4250 3850 50  0000 C CNN
-F 2 "" H 4250 4000 50  0000 C CNN
-F 3 "" H 4250 4000 50  0000 C CNN
-	1    4250 4000
+P 4250 4500
+F 0 "#PWR041" H 4250 4250 50  0001 C CNN
+F 1 "GND" H 4250 4350 50  0000 C CNN
+F 2 "" H 4250 4500 50  0000 C CNN
+F 3 "" H 4250 4500 50  0000 C CNN
+	1    4250 4500
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	3750 4000 4250 4000
-Text Label 4350 3900 2    60   ~ 0
+	3750 4500 4250 4500
+Text Label 4350 4400 2    60   ~ 0
 DVDD
 Wire Wire Line
-	4350 3900 3750 3900
+	4350 4400 3750 4400
 $Comp
 L PWR_FLAG #FLG042
 U 1 1 56B9EF5B
@@ -556,14 +556,14 @@ Wire Wire Line
 	1100 2700 1700 2700
 Wire Wire Line
 	1700 2600 1100 2600
-Text Label 3500 3000 2    60   ~ 0
+Text Label 3500 3500 2    60   ~ 0
 REF_B
-Text Label 3500 2500 2    60   ~ 0
+Text Label 3500 3000 2    60   ~ 0
 REF_A
 Wire Wire Line
-	3500 3000 2900 3000
+	3500 3500 2900 3500
 Wire Wire Line
-	3500 2500 2900 2500
+	3500 3000 2900 3000
 Text Label 1700 1800 2    60   ~ 0
 VS_BIAS
 Text Label 1700 1950 2    60   ~ 0
@@ -656,4 +656,35 @@ $EndComp
 Connection ~ 7800 1100
 Wire Wire Line
 	7800 1400 7800 1500
+Text HLabel 1100 2900 0    60   Input ~ 0
+ADC_REF+
+Text HLabel 1100 3000 0    60   Input ~ 0
+ADC_REF-
+Text Label 1700 2900 2    60   ~ 0
+ADC_REF+
+Text Label 1700 3000 2    60   ~ 0
+ADC_REF-
+Wire Wire Line
+	1100 3000 1700 3000
+Wire Wire Line
+	1700 2900 1100 2900
+$Comp
+L CONN_01X02 P405
+U 1 1 56BCEDCB
+P 2700 2450
+F 0 "P405" H 2700 2600 50  0000 C CNN
+F 1 "ADC_REF" V 2800 2450 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 2700 2450 50  0001 C CNN
+F 3 "" H 2700 2450 50  0000 C CNN
+	1    2700 2450
+	-1   0    0    -1  
+$EndComp
+Text Label 3500 2400 2    60   ~ 0
+ADC_REF+
+Text Label 3500 2500 2    60   ~ 0
+ADC_REF-
+Wire Wire Line
+	3500 2400 2900 2400
+Wire Wire Line
+	2900 2500 3500 2500
 $EndSCHEMATC
