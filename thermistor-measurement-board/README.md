@@ -34,44 +34,59 @@ Power supply info
 * MAX6070AAUT12+T (x2)
 
     Voltage:            2.7V - 5.5V (6V absolute max)
+    
     Active current:     130 µA typical, 200 µA max
+    
     Shutdown current:   6 µA max
 
 * AD8277
 
     Voltage:            ±2V - ±18V (single or dual supply)
+    
     Active current:     200 µA max (per channel?)
+    
     Shutdown current:   N/A
 
 * AD8607
 
     Voltage:            1.8V - 5V (6V absolute max)
+    
     Active current:     40 µA typical, 50 µA max (per channel, x2)
+    
     Shutdown current:   N/A
 
 * MAX14661(x2)
 
     Voltage:            1.6V - 5.5V (6V absolute max)
+    
     Active current:     675 µA typical, 1500 µA max
+    
     Shutdown current:   1 µA max.
 
 * MAX4208(x2)
 
     Voltage:            2.85V - 5.5V (6V absolute max)
+    
     Active current:     1.4 mA typical, 2.3 mA max (using REFIN buffer)
+    
     Shutdown current:   1.4 µA typical, 5 µA max.
+    
     REFIN divider cur:  0.4 uA
 
 * MCP3911
 
     Voltage:            2.7V - 3.6V (4V absolute max)
+    
     Active current:     1.7 - 5.1 mA typical,
                         2.4 - ~7.5 mA max
                         (depending on configuration)
+    
     Shutdown current:   2 µA max.
 
 * Overall system (excluding dividers, leakage currents, etc)
 
     Voltage:            2.85V - 3.6V (4V absolute max)
+    
     Active current:     ~11 mA max (lowest power ADC config)
+    
     Shutdown current:   527 uA max (500 uA from the current sources).
