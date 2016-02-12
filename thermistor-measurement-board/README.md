@@ -26,7 +26,7 @@ Contents
 
 * MCP3911 24-bit ADC with analog front-end.  This is a very inexpensive part so I'm a bit concerned it may not perform as advertised, but I thought I'd give it a try.  On paper it's an interesting design, achieving very impressive specs for its price point through DSP techniques.
 
-All parts except the current source have reasonably low active mode power consumption and very low power shutdown modes.  Current source should still be under 1 mA, but I intend to add a way to switch it off as well (or will I?  in practice I'll probably just turn off the supply to the whole board).
+All parts except the current source have reasonably low active mode power consumption and very low power shutdown modes.  Current sources will pull around 250 µA each, but in practice I expect that for a full shutdown I'll cut power to the whole board.
 
 Power supply info
 ==================
@@ -90,3 +90,81 @@ Power supply info
     Active current:     ~11 mA max (lowest power ADC config)
     
     Shutdown current:   527 uA max (500 uA from the current sources).
+
+
+Signal parameters, error analysis, etc
+=======================================
+
+* Voltage references
+
+    When driving current source, will likely use 1.25V version.
+    
+    specs here are for "A" grade
+    
+    Initial accuracy ± 0.04%, max 6 ppm/ºC drift, 3.6 µV P-P noise (0.1 Hz to 10 kHz).
+    200 mV dropout.
+    Settling time after power-up or enable: 6 ms (or 60 µs if filter cap C208/C210 is removed)
+    Very low output impedance (~ 0.1 Ω typically at 1 mA)
+
+* Current sources
+
+    These work by using a unity-gain difference amplifier to drive a set resistor (on the high side of a load) to a target voltage.  The second op-amp increases the input impedance of the feedback loop (without the op-amp, this would be 80 kΩ) to reduce error when driving high-impedance loads.
+    
+    Because of the feedback topology, all input voltages from GND to VS are valid as long as VS is at least 3V.  The output swing will range from GND (plus whatever offset is present at minimum load resistance) to VS - 0.2V - V_in at the low side of the sense resistor.
+    
+    difference amp (specs here are for "B" grade):
+    
+    system offset 200 µV max (0.012% with 1.25V reference)
+    gain error 0.02% max (250 µV with 1.25V reference)
+    differential input impedance 80 kΩ (about 1.25 ppm error on input from voltage ref's 0.1 Ω output)
+    settling time to 0.001%: 16 µs max
+    output noise 7 µV P-P max, 0.1 Hz - 10 kHz
+    
+    feedback buffer:
+    
+    offset error 50 µV max (0.004% with 1.25V reference)
+    input bias current 1 pA max (1 µV error with 1 MΩ set resistor)
+    output noise 3.5 µV P-P max, 0.1 Hz - 1 MHz
+    
+    total set-resistor voltage error (vref + diff amp + feedback buffer): 1 mV (0.08%).
+    
+    At these error levels, although the resistor error technically composes nonlinearly, the nonlinearity is negligible.  With a 0.02% set resistor, for xample, current accuracy should be 0.1% worst-case.  A 0.1% resistor should give 0.18% percent worst-case current accuracy.
+
+* Bias mux
+
+    This mux distributes bias current from either or both sources to any combination of the sensor channels.  The measurement is performed through a separate mux, to eliminate measurement errors due to the switch resistance of this mux.  If using a voltage-mode bias, the mux will add 8-12Ω (max) of fairly flat (24 mΩ, typically around 0.5%) source impedance, with channels typically matching to within 0.25Ω (around 5%).  Datasheet is not clear on whether these values are stable over time but I'd expect they are, and channels could be individually calibrated.
+    
+    input/output signal voltage range: ±5.5V
+    ESD protection: ±10kV on all muxed pins
+    switch on-state leakage current ±50 nA max (±5% error on 1 µA bias current).  This is with lines held at absolute limits: not sure what leakage would be at more typical voltages (≤0.6V), or how consistent it might be.  This figure definitely makes me worry about this mux.  To be fair, the graphs appear to show the "typical" figure to be a couple orders of magnitude lower, and very flat in all dimensions across ranges we care about.  I think I'm going to roll the dice on it - I have several options to work around it if it does turn out to be problematic (including the perfectly viable "screw it, let it be wrong at low bias currents" option, which won't harm my initial application for this board much).
+
+* Sense mux
+
+    This mux connects sensor channels to measurement channels.
+    
+    Same part as bias mux.
+
+* Instrument amps
+
+    Probably going to look for a different one for at least the second channel; turns out on closer inspection that it's only designed for up to about ±100 mV differential mode.  will probably keep one on channel A for the high gain and low offset (channel A is the one that supports differential measurements as well), but definitely don't want it to be the only option.
+
+    Input common-mode range (3V supply): -0.1V to 1.7V.  IN- will typically be GND so IN+ can swing rail-to-rail.
+    Output voltage swings to within a few tens of mV of either rail.
+    ADC input absolute max is only +2V though, so output channels are clamped to 1.8V by zener diodes (TODO: is there a better choice here?).  If amp tries to drive higher than 1.8V, it will source up to 20 mA (typical) through the zener diodes (and can do so continuously with no harm other than the wasted power), after which it will take about 0.5 ms to recover.
+    
+    Input differential mode range:
+    datasheet recommends keeping below 100mV or linearity is poor.
+    
+    Input resistance 2 GΩ, bias current 1 pA (negligible error for 1 uA bias current)
+    
+    Input offset ±20 µV max
+    Gain can be set for unity or higher.  Gain error at 100V/V with Vdiff ±20mV (doesn't say how accurate the set resistors were): ±0.25% max
+
+* ADC
+
+    This is a pretty interesting ADC architecture - it uses a 5-level sigma-delta frontend and DSP oversampling to achieve 24 bit resolution with fairly low noise and very good overall signal performance (if oversampling by a large enough factor).
+    Biggest weakness is that it only tolerates ±2V input.
+    
+    Input absolute range: ±1V
+    Input differential-mode range: ±0.6V full scale (divided by gain)
+    Offset, gain error and vref tolerance are relatively high but can be calibrated fairly well (gain error drift is 1 ppm/ºC, INL is 5 ppm, internal vref TC is 7 ppm/ºC)

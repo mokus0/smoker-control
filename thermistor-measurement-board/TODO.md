@@ -1,25 +1,9 @@
 TODO
 =====
 
-Stuff to add:
+* replace 2nd inamp with something better suited for low gain
 
-* Load switch for current sources, maybe
+* possibly replace ADC with something that can tolerate rail-to-rail inputs (even if it can't measure the full range)
 
-* Assembly notes for connector pinouts
-
-Stuff to check:
-
-* whether there's an easy way to run one channel from a current source and the other from one of the voltage references
-
-* check whether there are other lines that need (or might want) pull resistors
-
-* review all signals, make sure they are being driven properly, DNP annotations make sense, etc
-
-* check all resistor values for noise susceptibility (especially dividers and pull resistors used or overridden to enter shutdown modes)
-
-* error propagation of voltage and current references
-
-* error propagation of sensor signals
-
-* check whether there are any additional test points needed (especially for calibration)
+* check whether there's an easy way to run one channel from a current source and the other from one of the voltage references
 
