@@ -3,7 +3,7 @@ Sensor front-end board
 
 This board is an analog front-end designed to be able to interface with a very wide variety of sensors.  The immediate application is to read thermistors and RTDs, but it is massively overengineered for the task so it can be easily adapted to many other sensors.
 
-The board provides 16 single-ended channels (or, depending how the board is stuffed, these 16 channels can be paired in any combination for differential measurement).  I haven't built the board yet but each input *should* have very high input impedance (around 2 GΩ), very low noise, very low offset error and very low gain error (after ADC calibration; ADC has relatively high initial error but decent linearity and very low drift).  Up to 2 channels can be sampled simultaneously by a 24-bit ADC with programmable gain from 1 to 32 V/V, and the input amps can additionally be configured for different amounts of gain to widen the range the board can handle.
+The board provides 16 single-ended channels (or, depending how the board is stuffed, these 16 channels can be paired in any combination for differential measurement).  I haven't built the board yet but each input *should* have very high input impedance (around 2 GΩ on the high gain channel and 10 TΩ on the unity-gain channel), very low noise, very good linearity and (after ADC calibration) very good overall accuracy.  Up to 2 channels can be sampled simultaneously by a 24-bit ADC with programmable gain from 1 to 32 V/V, and the input amps are additionally configured for two different levels of gain (unity and 100x) to widen the range the board can handle.
 
 Each channel can also be independently connected to one of two bias supplies, with very accurate on-board voltage and current references.
 
@@ -22,7 +22,7 @@ Contents
 
 * MAX14661 multiplexer (x2): the first connects 2 power sources to 16 sensor channels and the other connects the same sensor channels to 2 sampling channels.  These are on separate pins to support 3-terminal measurements, and with a bit of finagling channels can be ganged together to support 4-terminal measurements.
 
-* MAX4208 instrument amp (x2) to provide high impedance at the sensor measurement terminals.
+* MAX4209 and MCP6N11 instrument amps to provide high impedance at the sensor measurement terminals and a couple gain ranges.
 
 * MCP3911 24-bit ADC with analog front-end.  This is a very inexpensive part so I'm a bit concerned it may not perform as advertised, but I thought I'd give it a try.  On paper it's an interesting design, achieving very impressive specs for its price point through DSP techniques.
 
@@ -63,7 +63,7 @@ Power supply info
     
     Shutdown current:   1 µA max.
 
-* MAX4208(x2)
+* MAX4209
 
     Voltage:            2.85V - 5.5V (6V absolute max)
     
@@ -71,7 +71,17 @@ Power supply info
     
     Shutdown current:   1.4 µA typical, 5 µA max.
     
-    REFIN divider cur:  0.4 uA
+    REFIN divider cur:  0.4 µA
+
+* MCP6N11
+
+    Voltage:            1.8V - 5.5V (6.5V absolute max)
+    
+    Active current:     800 µA typical, 1.1 mA max
+    
+    Shutdown current:   ~1 µA typical
+    
+    REF divider cur:    0.4 µA
 
 * MCP3911
 
@@ -87,7 +97,7 @@ Power supply info
 
     Voltage:            2.85V - 3.6V (4V absolute max)
     
-    Active current:     ~11 mA max (lowest power ADC config)
+    Active current:     ~10 mA max (lowest power ADC config)
     
     Shutdown current:   527 uA max (500 uA from the current sources).
 
@@ -144,7 +154,7 @@ Signal parameters, error analysis, etc
     
     Same part as bias mux.
 
-* Instrument amps
+* MAX4208/9
 
     Probably going to look for a different one for at least the second channel; turns out on closer inspection that it's only designed for up to about ±100 mV differential mode.  will probably keep one on channel A for the high gain and low offset (channel A is the one that supports differential measurements as well), but definitely don't want it to be the only option.
 
@@ -159,6 +169,21 @@ Signal parameters, error analysis, etc
     
     Input offset ±20 µV max
     Gain can be set for unity or higher.  Gain error at 100V/V with Vdiff ±20mV (doesn't say how accurate the set resistors were): ±0.25% max
+
+* MCP6N11
+
+    Input common-mode range (3V supply): -0.2V to 3.15V
+    Common-mode non-linearity (non-linear change of input offset with common-mode voltage): 0.1% worst-case (unity gain, 1.8V supply) - typically much better
+    Gain error ±1% max, but very low drift (6 ppm/ºC)
+    Differential non-linearity
+        (G = 1): ±30 ppm typical, ±500 ppm max
+        (G = 10, 100): ±100 ppm typical, ±2000 ppm max
+    
+    Input bias current 10 pA typical, 5 nA max (at 125ºC)
+    Input resistance 10TΩ
+    
+    Output voltage swing: within about 25 mV of rails
+    Output impedance: (G = 1, 10) 900Ω typical (G = 100) 600Ω typical
 
 * ADC
 

@@ -1,5 +1,17 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP AD620
+D Instrumentation amplifier
+K INSTRUMENTATION
+F analog-dev/AD620.pdf
+$ENDCMP
+#
+$CMP MCP6N11
+D Instrumentation amplifier
+K INSTRUMENTATION
+F analog-dev/AD620.pdf
+$ENDCMP
+#
 $CMP PWR_CONN
 D Connector 01x04
 $ENDCMP

@@ -1,7 +1,7 @@
 TODO
 =====
 
-* replace 2nd inamp with something better suited for low gain
+* review 2nd inamp schematic and layout
 
 * possibly replace ADC with something that can tolerate rail-to-rail inputs (even if it can't measure the full range)
 
