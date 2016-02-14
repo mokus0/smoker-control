@@ -1006,7 +1006,7 @@ L R R327
 U 1 1 56BFF125
 P 1100 6550
 F 0 "R327" V 1180 6550 50  0000 C CNN
-F 1 "100k" V 1100 6550 50  0000 C CNN
+F 1 "1M" V 1100 6550 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 1030 6550 50  0001 C CNN
 F 3 "" H 1100 6550 50  0000 C CNN
 	1    1100 6550
@@ -1126,4 +1126,6 @@ Wire Wire Line
 	4900 4500 4900 4400
 Wire Wire Line
 	5200 4500 5200 4400
+Text Notes 8200 4350 0    60   ~ 0
+TODO: input voltage/current limiting\n(maybe on a future version)
 $EndSCHEMATC

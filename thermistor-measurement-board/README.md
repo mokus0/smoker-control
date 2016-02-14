@@ -156,7 +156,7 @@ Signal parameters, error analysis, etc
 
 * MAX4208/9
 
-    Probably going to look for a different one for at least the second channel; turns out on closer inspection that it's only designed for up to about ±100 mV differential mode.  will probably keep one on channel A for the high gain and low offset (channel A is the one that supports differential measurements as well), but definitely don't want it to be the only option.
+    Not suitable for both channels; it's only designed for up to about ±100 mV differential mode.  Future iterations may use MCP6N11 for both channels as it seems well-suited to a wide gain range, but for now I want to try this one out for a high-gain channel as it has several features that make it appealing for high-gain small-signal applications.
 
     Input common-mode range (3V supply): -0.1V to 1.7V.  IN- will typically be GND so IN+ can swing rail-to-rail.
     Output voltage swings to within a few tens of mV of either rail.
