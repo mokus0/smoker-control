@@ -1025,8 +1025,6 @@ Text Label 9350 4500 3    60   ~ 0
 REF_B
 Text Label 1900 2200 2    60   ~ 0
 AMP_B_EN
-Text Notes 7150 6900 0    60   ~ 0
-TODO: move zener diodes to ADC sheet
 $Comp
 L GNDA #PWR031
 U 1 1 56C17DF0
